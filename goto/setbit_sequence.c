@@ -6,30 +6,26 @@ int main()
 	int res;
 	puts("enter data:");
 	scanf("%d",&data);
-test:	if(data &(1<<bit))
+	while(bit>=0)
 	{
-		count++;
-		if(data &(1<<(bit-1)))
+		if(data &(1<<bit))
 		{
-			//printf("count=%d\n",count++);
 			count++;
-			bit--;
 		}
-	
-		count++;
-		if(count>longest)
+		else
 		{
-			longest=count;
+			if(count>longest)
+			{
+				longest=count;
+			}
+			count=0;
 		}
+	bit--;
 	}
-lable:	bit--;
-	if(bit>=0)
-	{
-		goto test;
-	}
-	//printf("count:%d\n",count);
-	printf("set bit sequence:%d\n",longest);
-	//printf("count1=%d\n",count1++);
+	if(count>longest)
+		printf("count:%d\n",count);
+	else
+		printf("set bit sequence:%d\n",longest);
 }
 
 
