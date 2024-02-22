@@ -6,7 +6,7 @@ int main()
 	puts("enter data:");
 	scanf("%d",&data);
 	for(i=31;i>=0;i--)
-		printf("%d",((data>>i)&1));
+		printf("%d",(data>>i)&1);
 	printf("\n");
 	while(bit>=0)
 	{
